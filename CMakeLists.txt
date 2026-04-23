@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(ProyectoPrograII main.cpp
         Equipo.cpp
-        Equipo.h)
+        Equipo.h
+        Computador.cpp
+        Computador.h)
