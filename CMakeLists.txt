@@ -10,5 +10,5 @@ add_executable(ProyectoPrograII main.cpp
         Computador.h
         Servidor.cpp
         Servidor.h
-        Laboratio.cpp
-        Laboratio.h)
+        Laboratorio.cpp
+        Laboratorio.h)
