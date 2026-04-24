@@ -21,7 +21,7 @@ public:
     void ejecutarSimulacion();
     void degradarEquipos();
     float calcularRiesgoActual();
-    void agregarEquipo();
+    void agregarEquipo(Equipo*);
 };
 
 

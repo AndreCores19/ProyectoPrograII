@@ -39,3 +39,8 @@ void Computador::aplicaMantenimiento() {
         estado = 100;
     }
 }
+
+string Computador::getId() const {
+    return id;
+}
+

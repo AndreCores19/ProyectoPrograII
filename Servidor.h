@@ -12,6 +12,7 @@ public:
     float calcularPrioridad() override;
     void aplicaDegradacion() override;
     void aplicaMantenimiento() override;
+    string getId() const override;
 };
 
 #endif //PROYECTOPROGRAII_SERVIDOR_H
