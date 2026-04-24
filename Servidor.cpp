@@ -1,11 +1,7 @@
-//
-// Created by julia on 23/4/2026.
-//
 
 #include "Servidor.h"
 
-Servidor::Servidor(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas, float nivelDegradacion)
-    : Equipo(id, estado, tiempoInactivo, criticidad, incidenciasActivas) {
+Servidor::Servidor(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas, float nivelDegradacion) : Equipo(id, estado, tiempoInactivo, criticidad, incidenciasActivas) {
     this->nivelDegradacion = nivelDegradacion;
 }
 Servidor::Servidor() : Equipo() {

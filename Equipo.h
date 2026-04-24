@@ -1,6 +1,3 @@
-//
-// Created by andre on 15/4/2026.
-//
 
 #ifndef PROYECTOPROGRAII_EQUIPO_H
 #define PROYECTOPROGRAII_EQUIPO_H
@@ -15,10 +12,7 @@ protected:
     int criticidad;
     int incidenciasActivas;
 public:
-    Equipo(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas);
     Equipo();
-    virtual ~Equipo();
-    //Gets y sets
     void setId(string);
     string getId();
     void setEstado(float);
@@ -29,10 +23,13 @@ public:
     int getCriticidad();
     void setIncidenciasActiva(int);
     int getIncidenciasActiva();
-    //Metodos
+    Equipo(string, float, int, int, int);
+    virtual ~Equipo() = 0;
     virtual float calcularPrioridad() = 0;
     virtual void aplicaDegradacion() = 0;
     virtual void aplicaMantenimiento() = 0;
+    virtual string getId() const = 0;
+
 };
 
 

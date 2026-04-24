@@ -1,6 +1,3 @@
-//
-// Created by julia on 23/4/2026.
-//
 
 #ifndef PROYECTOPROGRAII_LABORATORIO_H
 #define PROYECTOPROGRAII_LABORATORIO_H
@@ -15,11 +12,11 @@ protected:
     float riesgoActual;
 public:
     Laboratorio();
-    Laboratorio(Equipo** equipos, int cantidad, int tamano, int diaActual, float riesgoActual);
+    Laboratorio(Equipo**, int, int, int, float);
     virtual ~Laboratorio();
-    void setDiaActual(int diaActual);
+    void setDiaActual(int);
     int getDiaActual();
-    void setRiesgoActual(float riesgoActual);
+    void setRiesgoActual(float);
     float getRiesgoActual();
     void ejecutarSimulacion();
     void degradarEquipos();
