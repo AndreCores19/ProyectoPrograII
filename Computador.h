@@ -6,8 +6,7 @@
 #define PROYECTOPROGRAII_COMPUTADOR_H
 #include "Equipo.h"
 
-class Computador : public Equipo
-{
+class Computador : public Equipo {
 private:
     float nivelDegradacion;
 public:
