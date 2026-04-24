@@ -1,11 +1,7 @@
-
-
 #ifndef PROYECTOPROGRAII_SERVIDOR_H
 #define PROYECTOPROGRAII_SERVIDOR_H
 #include "Equipo.h"
-class Servidor : public Equipo
-{
-private:
+class Servidor : public Equipo {
     float nivelDegradacion;
 public:
     Servidor(string, float, int, int, int, float);
