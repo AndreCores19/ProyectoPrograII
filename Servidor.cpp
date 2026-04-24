@@ -26,14 +26,14 @@ float Servidor::calcularPrioridad() {
 }
 
 void Servidor::aplicaDegradacion() {
-    estado -= 5 * nivelDegradacion;
+    estado -= 8 * nivelDegradacion;
     tiempoInactivo += 1;
     if (estado < 0) {
         estado = 0;
     }
 }
 void Servidor::aplicaMantenimiento() {
-    estado += 20;
+    estado += 30;
     tiempoInactivo = 0;
     if (incidenciasActivas > 0) {
         incidenciasActivas--;

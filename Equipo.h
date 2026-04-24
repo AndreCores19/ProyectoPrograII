@@ -17,7 +17,7 @@ protected:
 public:
     Equipo(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas);
     Equipo();
-    virtual ~Equipo() = 0;
+    virtual ~Equipo();
     //Gets y sets
     void setId(string);
     string getId();
