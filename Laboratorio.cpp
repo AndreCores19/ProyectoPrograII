@@ -49,17 +49,34 @@ float Laboratorio::getRiesgoActual() {
 }
 
 void Laboratorio::ejecutarSimulacion() {
+
 }
 
 void Laboratorio::degradarEquipos() {
+    for (int i = 0; i < cantidad; i++) {
+        if (equipos[i] != nullptr) {
+            equipos[i]->aplicaDegradacion();
+        }
+    }
 }
 
 float Laboratorio::calcularRiesgoActual() {
+    float riesgoTotal = 0.0;
+    for (int i = 0; i < cantidad; i++) {
+        if (equipos[i] != nullptr) {
+            riesgoTotal += equipos[i]->calcularPrioridad();
+        }
+    }
+    return riesgoTotal / cantidad;
 }
 
 void Laboratorio::agregarEquipo(Equipo* nuevo) {
     if (cantidad < tamano) {
-        equipos[cantidad] = nuevo;
-        cantidad++;
+        for (int i = 0; i < tamano; i++) {
+            if (equipos[i] == nullptr) {
+                equipos[i] = nuevo;
+                cantidad++;
+            }
+        }
     }
 }
