@@ -8,20 +8,31 @@
 using namespace std;
 
 class Equipo {
+protected:
     string id;
     float estado;
     int tiempoInactivo;
     int criticidad;
     int incidenciasActivas;
-
 public:
+    Equipo(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas);
     Equipo();
     virtual ~Equipo() = 0;
+    //Gets y sets
+    void setId(string);
+    string getId();
+    void setEstado(float);
+    float getEstado();
+    void setTiempoInactivo(int);
+    int getTiempoInactivo();
+    void setCriticidad(int);
+    int getCriticidad();
+    void setIncidenciasActiva(int);
+    int getIncidenciasActiva();
+    //Metodos
     virtual float calcularPrioridad() = 0;
-    virtual void Degradacion() = 0;
+    virtual void aplicaDegradacion() = 0;
     virtual void aplicaMantenimiento() = 0;
-    virtual string getId() const = 0;
-
 };
 
 

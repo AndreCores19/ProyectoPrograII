@@ -5,17 +5,20 @@
 #ifndef PROYECTOPROGRAII_COMPUTADOR_H
 #define PROYECTOPROGRAII_COMPUTADOR_H
 #include "Equipo.h"
-using namespace std;
 
-class Computador : public Equipo {
+class Computador : public Equipo
+{
+private:
     float nivelDegradacion;
 public:
+    Computador(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas, float nivelDegradacion);
     Computador();
     ~Computador() override;
+    void setNivelDegradacion(float);
+    float getNivelDegradacion();
     float calcularPrioridad() override;
-    void Degradacion() override;
+    void aplicaDegradacion() override;
     void aplicaMantenimiento() override;
-    string getId() const override;
 };
 
 

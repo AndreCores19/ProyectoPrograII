@@ -1,38 +1,38 @@
 //
-// Created by andre on 22/4/2026.
+// Created by julia on 23/4/2026.
 //
 
-#include "Computador.h"
+#include "Servidor.h"
 
-Computador::Computador(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas, float nivelDegradacion)
+Servidor::Servidor(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas, float nivelDegradacion)
     : Equipo(id, estado, tiempoInactivo, criticidad, incidenciasActivas) {
     this->nivelDegradacion = nivelDegradacion;
 }
-Computador::Computador() : Equipo() {
+Servidor::Servidor() : Equipo() {
     nivelDegradacion = 0.0;
 }
-Computador::~Computador(){}
+Servidor::~Servidor(){}
 
-void Computador::setNivelDegradacion(float nivelDegradacion) {
+void Servidor::setNivelDegradacion(float nivelDegradacion) {
     this->nivelDegradacion = nivelDegradacion;
 }
 
-float Computador::getNivelDegradacion() {
+float Servidor::getNivelDegradacion() {
     return nivelDegradacion;
 }
 
-float Computador::calcularPrioridad() {
+float Servidor::calcularPrioridad() {
     return (criticidad * 0.5) + (incidenciasActivas * 0.3) + (tiempoInactivo * 0.2);
 }
 
-void Computador::aplicaDegradacion() {
+void Servidor::aplicaDegradacion() {
     estado -= 5 * nivelDegradacion;
     tiempoInactivo += 1;
     if (estado < 0) {
         estado = 0;
     }
 }
-void Computador::aplicaMantenimiento() {
+void Servidor::aplicaMantenimiento() {
     estado += 20;
     tiempoInactivo = 0;
     if (incidenciasActivas > 0) {

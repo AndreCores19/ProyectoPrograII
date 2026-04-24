@@ -7,4 +7,6 @@ add_executable(ProyectoPrograII main.cpp
         Equipo.cpp
         Equipo.h
         Computador.cpp
-        Computador.h)
+        Computador.h
+        Servidor.cpp
+        Servidor.h)
