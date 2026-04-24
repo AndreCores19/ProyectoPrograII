@@ -38,3 +38,7 @@ void Servidor::aplicaMantenimiento() {
         estado = 100;
     }
 }
+
+string Servidor::getId() const {
+    return id;
+}

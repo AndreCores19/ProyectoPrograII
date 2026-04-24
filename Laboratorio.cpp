@@ -57,6 +57,9 @@ void Laboratorio::degradarEquipos() {
 float Laboratorio::calcularRiesgoActual() {
 }
 
-void Laboratorio::agregarEquipo() {
-
+void Laboratorio::agregarEquipo(Equipo* nuevo) {
+    if (cantidad < tamano) {
+        equipos[cantidad] = nuevo;
+        cantidad++;
+    }
 }
