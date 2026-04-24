@@ -1,6 +1,3 @@
-//
-// Created by andre on 22/4/2026.
-//
 
 #ifndef PROYECTOPROGRAII_COMPUTADOR_H
 #define PROYECTOPROGRAII_COMPUTADOR_H
@@ -10,7 +7,7 @@ class Computador : public Equipo {
 private:
     float nivelDegradacion;
 public:
-    Computador(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas, float nivelDegradacion);
+    Computador(string, float, int, int, int, float);
     Computador();
     ~Computador() override;
     void setNivelDegradacion(float);

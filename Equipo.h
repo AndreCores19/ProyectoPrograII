@@ -1,6 +1,4 @@
-//
-// Created by andre on 15/4/2026.
-//
+
 
 #ifndef PROYECTOPROGRAII_EQUIPO_H
 #define PROYECTOPROGRAII_EQUIPO_H
@@ -15,7 +13,7 @@ protected:
     int criticidad;
     int incidenciasActivas;
 public:
-    Equipo(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas);
+    Equipo(string, float, int, int, int);
     Equipo();
     virtual ~Equipo();
     //Gets y sets

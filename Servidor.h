@@ -1,15 +1,14 @@
-//
-// Created by julia on 23/4/2026.
-//
+
 
 #ifndef PROYECTOPROGRAII_SERVIDOR_H
 #define PROYECTOPROGRAII_SERVIDOR_H
 #include "Equipo.h"
-class Servidor : public Equipo {
+class Servidor : public Equipo
+{
 private:
     float nivelDegradacion;
 public:
-    Servidor(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas, float nivelDegradacion);
+    Servidor(string, float, int, int, int, float);
     Servidor();
     ~Servidor() override;
     void setNivelDegradacion(float);
