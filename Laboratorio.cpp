@@ -49,7 +49,7 @@ float Laboratorio::getRiesgoActual() {
 }
 
 void Laboratorio::ejecutarSimulacion() {
-
+//en proceso
 }
 
 void Laboratorio::degradarEquipos() {
