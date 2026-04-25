@@ -20,7 +20,7 @@ public:
     float getRiesgoActual();
     void ejecutarSimulacion();
     void degradarEquipos();
-    float calcularRiesgoActual();
+    void calcularRiesgoActual();
     void agregarEquipo(Equipo*);
 };
 

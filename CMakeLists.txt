@@ -13,4 +13,17 @@ add_executable(ProyectoPrograII main.cpp
         Laboratorio.cpp
         Laboratorio.h
         LectorArchivo.h
-        LectorArchivo.cpp)
+        LectorArchivo.cpp
+        ErrorBase.cpp
+        ErrorBase.h
+        ArchivoInvalido.cpp
+        ArchivoInvalido.h
+        OperacionInconsistente.cpp
+        OperacionInconsistente.h
+        FormatoInvalido.cpp
+        FormatoInvalido.h
+        GenerarReporte.cpp
+        GenerarReporte.h
+        Ordenamiento.cpp
+        Ordenamiento.h
+)

@@ -7,12 +7,10 @@
 #include <iostream>
 using namespace std;
 
-class LectorArchivo : public Laboratorio{
+class LectorArchivo {
     string rutaArchivo;
 public:
     LectorArchivo(string);
-    Equipo** cargarEquipos() override;
-    Equipo** cargarIncidencias() override;
     ~LectorArchivo() = default;
 
 };

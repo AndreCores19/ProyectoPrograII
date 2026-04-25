@@ -60,14 +60,14 @@ void Laboratorio::degradarEquipos() {
     }
 }
 
-float Laboratorio::calcularRiesgoActual() {
+void Laboratorio::calcularRiesgoActual() {
     float riesgoTotal = 0.0;
     for (int i = 0; i < cantidad; i++) {
         if (equipos[i] != nullptr) {
             riesgoTotal += equipos[i]->calcularPrioridad();
         }
     }
-    return riesgoTotal / cantidad;
+    this->riesgoActual = riesgoTotal / cantidad;
 }
 
 void Laboratorio::agregarEquipo(Equipo* nuevo) {
