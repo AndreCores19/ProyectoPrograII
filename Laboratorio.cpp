@@ -5,21 +5,19 @@ Laboratorio::Laboratorio() {
     this->tamano = 100;
     this->cantidad = 0;
     this->diaActual = 0;
-    this->riesgoActual = 0.0;
     this->equipos = new Equipo*[tamano];
     for (int i = 0; i < tamano; i++) {
         equipos[i] = nullptr;
     }
 }
 
-Laboratorio::Laboratorio(Equipo** equipos, int cantidad, int tamano, int diaActual, float riesgoActual) {
+Laboratorio::Laboratorio(Equipo** equipos, int cantidad, int tamano, int diaActual, float riesgoTotal) {
         this->tamano = tamano;
         this->cantidad = cantidad;
         this->diaActual = diaActual;
-        this->riesgoActual = riesgoActual;
         this->equipos = new Equipo*[tamano];
         for (int i = 0; i < cantidad; i++) {
-            equipos[i] = equipos[i];
+            this->equipos[i] = equipos[i];
         }
 }
 
@@ -40,16 +38,15 @@ int Laboratorio::getDiaActual() {
     return this->diaActual;
 }
 
-void Laboratorio::setRiesgoActual(float riesgoActual) {
-    this->riesgoActual = riesgoActual;
-}
-
-float Laboratorio::getRiesgoActual() {
-    return this->riesgoActual;
-}
-
-void Laboratorio::ejecutarSimulacion() {
-//en proceso
+void Laboratorio::generarIncidencias() {
+    for (int i = 0; i < cantidad; i++) {
+        int probabilidad = rand() % 100;
+        if (probabilidad < 10) { // 10% de posibilidad de dañarse
+            equipos[i]->setIncidenciasActiva(
+                equipos[i]->getIncidenciasActiva() + 1
+            );
+        }
+    }
 }
 
 void Laboratorio::degradarEquipos() {
@@ -67,7 +64,7 @@ float Laboratorio::calcularRiesgoActual() {
             riesgoTotal += equipos[i]->calcularPrioridad();
         }
     }
-    return riesgoTotal / cantidad;
+    return riesgoTotal;
 }
 
 void Laboratorio::agregarEquipo(Equipo* nuevo) {
@@ -76,6 +73,7 @@ void Laboratorio::agregarEquipo(Equipo* nuevo) {
             if (equipos[i] == nullptr) {
                 equipos[i] = nuevo;
                 cantidad++;
+                break;
             }
         }
     }

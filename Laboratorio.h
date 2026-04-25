@@ -9,16 +9,13 @@ protected:
     int cantidad;
     int tamano;
     int diaActual;
-    float riesgoActual;
 public:
     Laboratorio();
     Laboratorio(Equipo**, int, int, int, float);
     virtual ~Laboratorio();
     void setDiaActual(int);
     int getDiaActual();
-    void setRiesgoActual(float);
-    float getRiesgoActual();
-    void ejecutarSimulacion();
+    void generarIncidencias();
     void degradarEquipos();
     float calcularRiesgoActual();
     void agregarEquipo(Equipo*);
