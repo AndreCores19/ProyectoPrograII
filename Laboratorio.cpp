@@ -1,6 +1,6 @@
 
 #include "Laboratorio.h"
-
+//hola
 Laboratorio::Laboratorio() {
     this->tamano = 100;
     this->cantidad = 0;
