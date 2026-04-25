@@ -17,7 +17,7 @@ public:
     int getDiaActual();
     void generarIncidencias();
     void degradarEquipos();
-    void calcularRiesgoActual();
+    float calcularRiesgoActual();
     void agregarEquipo(Equipo*);
 };
 

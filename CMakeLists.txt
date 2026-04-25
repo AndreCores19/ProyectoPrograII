@@ -26,4 +26,5 @@ add_executable(ProyectoPrograII main.cpp
         GenerarReporte.h
         Ordenamiento.cpp
         Ordenamiento.h
+        Incidencia.h
 )
