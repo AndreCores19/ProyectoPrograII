@@ -8,13 +8,14 @@
 #include <exception>
 using namespace std;
 
-class ErrorBase {
+class ErrorBase : public exception {
 protected:
     string mensaje;
 public:
     ErrorBase(string);
     ErrorBase();
     string getMensaje();
+    const char* what() const noexcept override;
 };
 
 

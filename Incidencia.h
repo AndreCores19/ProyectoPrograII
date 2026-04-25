@@ -8,13 +8,13 @@ const int Alta = 2;
 
 class Incidencia {
 private:
-    Equipo *idEquipo;
+    string idEquipo;
     int severidad;
     int diaRegistro;
     bool fallaAtendida;
 public:
     Incidencia();
-    Incidencia(Equipo* idEquipo, int, int);
+    Incidencia(string, int, int);
     ~Incidencia();
     string getIdEquipo();
     int getSeveridad() const;

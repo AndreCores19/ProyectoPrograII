@@ -11,13 +11,13 @@ Laboratorio::Laboratorio() {
     }
 }
 
-Laboratorio::Laboratorio(Equipo** equipos, int cantidad, int tamano, int diaActual, float riesgoActual) {
+Laboratorio::Laboratorio(Equipo** equipos, int cantidad, int tamano, int diaActual) {
         this->tamano = tamano;
         this->cantidad = cantidad;
         this->diaActual = diaActual;
         this->equipos = new Equipo*[tamano];
         for (int i = 0; i < cantidad; i++) {
-            equipos[i] = equipos[i];
+            this->equipos[i] = equipos[i];
         }
 }
 
@@ -62,6 +62,7 @@ void Laboratorio::agregarEquipo(Equipo* nuevo) {
             if (equipos[i] == nullptr) {
                 equipos[i] = nuevo;
                 cantidad++;
+                break;
             }
         }
     }

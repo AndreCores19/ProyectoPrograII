@@ -5,13 +5,15 @@
 #ifndef PROYECTOPROGRAII_ORDENAMIENTO_H
 #define PROYECTOPROGRAII_ORDENAMIENTO_H
 #include <iostream>
-#include "Laboratorio.h"
+#include "Equipo.h"
 using namespace std;
 
 class Ordenamiento {
+    void mergeSort(Equipo**, int, int);
+    void merge(Equipo**, int, int, int);
 public:
-    void ordenar(Equipo**, );
-    Ordenamiento() = default;
+    void ordenar(Equipo**, int);
+    Ordenamiento();
 
 };
 

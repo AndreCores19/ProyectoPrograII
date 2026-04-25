@@ -11,7 +11,7 @@ protected:
     int diaActual;
 public:
     Laboratorio();
-    Laboratorio(Equipo**, int, int, int, float);
+    Laboratorio(Equipo**, int, int, int);
     virtual ~Laboratorio();
     void setDiaActual(int);
     int getDiaActual();

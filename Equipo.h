@@ -28,7 +28,6 @@ public:
     virtual float calcularPrioridad() = 0;
     virtual void aplicaDegradacion() = 0;
     virtual void aplicaMantenimiento() = 0;
-    virtual string getId() const = 0;
 
 };
 

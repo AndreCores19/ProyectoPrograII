@@ -6,7 +6,7 @@ Incidencia::Incidencia() {
     diaRegistro = 0;
     fallaAtendida = false;
 }
-Incidencia::Incidencia(Equipo* idEquipo, int severidad, int diaRegistro) {
+Incidencia::Incidencia(string idEquipo, int severidad, int diaRegistro) {
     this->idEquipo = idEquipo;
     this->severidad = severidad;
     this->diaRegistro = diaRegistro;
@@ -15,7 +15,7 @@ Incidencia::Incidencia(Equipo* idEquipo, int severidad, int diaRegistro) {
 Incidencia::~Incidencia() {}
 
 string Incidencia::getIdEquipo() {
-    return idEquipo->getId();
+    return idEquipo;
 }
 
 int Incidencia::getSeveridad() const {
