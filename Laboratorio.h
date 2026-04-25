@@ -2,7 +2,6 @@
 #ifndef PROYECTOPROGRAII_LABORATORIO_H
 #define PROYECTOPROGRAII_LABORATORIO_H
 #include "Equipo.h"
-//hola
 class Laboratorio {
 protected:
     Equipo** equipos;
@@ -15,7 +14,6 @@ public:
     virtual ~Laboratorio();
     void setDiaActual(int);
     int getDiaActual();
-    void generarIncidencias();
     void degradarEquipos();
     float calcularRiesgoActual();
     void agregarEquipo(Equipo*);
