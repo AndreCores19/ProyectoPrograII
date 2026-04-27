@@ -4,15 +4,22 @@
 #include "Laboratorio.h"
 #include "Computador.h"
 #include "Servidor.h"
-#include <iostream>
+#include "Incidencia.h"
+#include "ArchivoInvalido.h"
+#include "FormatoInvalido.h"
+#include "OperacionInconsistente.h"
+#include <fstream>
+#include <sstream>
 using namespace std;
 
 class LectorArchivo {
-    string rutaArchivo;
+    string rutaEquipos;
+    string rutaIncidencias;
 public:
-    LectorArchivo(string);
+    LectorArchivo(string rutaEquipos, string rutaIncidencias);
     ~LectorArchivo() = default;
-
+    void cargarEquipos(Laboratorio* laboratorio);
+    void cargarIncidencias(Laboratorio* laboratorio);
 };
 
 

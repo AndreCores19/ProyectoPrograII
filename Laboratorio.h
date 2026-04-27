@@ -17,6 +17,7 @@ public:
     void degradarEquipos();
     float calcularRiesgoActual();
     void agregarEquipo(Equipo*);
+    Equipo* buscarEquipo(string id);
 };
 
 

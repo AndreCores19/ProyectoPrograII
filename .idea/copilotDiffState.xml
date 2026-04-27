@@ -12,30 +12,12 @@
             </PendingDiffInfo>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/Computador.h">
-          <value>
-            <PendingDiffInfo>
-              <option name="filePath" value="$PROJECT_DIR$/Computador.h" />
-              <option name="originalContent" value="&#10;#ifndef PROYECTOPROGRAII_COMPUTADOR_H&#10;#define PROYECTOPROGRAII_COMPUTADOR_H&#10;#include &quot;Equipo.h&quot;&#10;&#10;class Computador : public Equipo {&#10;private:&#10;    float nivelDegradacion;&#10;public:&#10;    Computador(string, float, int, int, int, float);&#10;    Computador();&#10;    ~Computador() override;&#10;    void setNivelDegradacion(float);&#10;    float getNivelDegradacion();&#10;    float calcularPrioridad() override;&#10;    void aplicaDegradacion() override;&#10;    void aplicaMantenimiento() override;&#10;};&#10;&#10;&#10;#endif //PROYECTOPROGRAII_COMPUTADOR_H" />
-              <option name="updatedContent" value="&#10;#ifndef PROYECTOPROGRAII_COMPUTADOR_H&#10;#define PROYECTOPROGRAII_COMPUTADOR_H&#10;#include &quot;Equipo.h&quot;&#10;&#10;class Computador : public Equipo {&#10;private:&#10;    float nivelDegradacion;&#10;public:&#10;    Computador(string, float, int, int, int, float);&#10;    Computador();&#10;    ~Computador() override;&#10;    void setNivelDegradacion(float);&#10;    float getNivelDegradacion();&#10;    float calcularPrioridad() override;&#10;    void aplicaDegradacion() override;&#10;    void aplicaMantenimiento() override;&#10;    string getId() const override;&#10;};&#10;&#10;&#10;#endif //PROYECTOPROGRAII_COMPUTADOR_H" />
-            </PendingDiffInfo>
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/Servidor.cpp">
           <value>
             <PendingDiffInfo>
               <option name="filePath" value="$PROJECT_DIR$/Servidor.cpp" />
               <option name="originalContent" value="&#10;#include &quot;Servidor.h&quot;&#10;&#10;Servidor::Servidor(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas, float nivelDegradacion) : Equipo(id, estado, tiempoInactivo, criticidad, incidenciasActivas) {&#10;    this-&gt;nivelDegradacion = nivelDegradacion;&#10;}&#10;Servidor::Servidor() : Equipo() {&#10;    nivelDegradacion = 0.0;&#10;}&#10;Servidor::~Servidor(){}&#10;&#10;void Servidor::setNivelDegradacion(float nivelDegradacion) {&#10;    this-&gt;nivelDegradacion = nivelDegradacion;&#10;}&#10;&#10;float Servidor::getNivelDegradacion() {&#10;    return nivelDegradacion;&#10;}&#10;&#10;float Servidor::calcularPrioridad() {&#10;    return (criticidad * 0.5) + (incidenciasActivas * 0.3) + (tiempoInactivo * 0.2);&#10;}&#10;&#10;void Servidor::aplicaDegradacion() {&#10;    estado -= 8 * nivelDegradacion;&#10;    tiempoInactivo += 1;&#10;    if (estado &lt; 0) {&#10;        estado = 0;&#10;    }&#10;}&#10;void Servidor::aplicaMantenimiento() {&#10;    estado += 30;&#10;    tiempoInactivo = 0;&#10;    if (incidenciasActivas &gt; 0) {&#10;        incidenciasActivas--;&#10;    }&#10;    if (estado &gt; 100) {&#10;        estado = 100;&#10;    }&#10;}" />
               <option name="updatedContent" value="&#10;#include &quot;Servidor.h&quot;&#10;&#10;Servidor::Servidor(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas, float nivelDegradacion) : Equipo(id, estado, tiempoInactivo, criticidad, incidenciasActivas) {&#10;    this-&gt;nivelDegradacion = nivelDegradacion;&#10;}&#10;Servidor::Servidor() : Equipo() {&#10;    nivelDegradacion = 0.0;&#10;}&#10;Servidor::~Servidor(){}&#10;&#10;void Servidor::setNivelDegradacion(float nivelDegradacion) {&#10;    this-&gt;nivelDegradacion = nivelDegradacion;&#10;}&#10;&#10;float Servidor::getNivelDegradacion() {&#10;    return nivelDegradacion;&#10;}&#10;&#10;float Servidor::calcularPrioridad() {&#10;    return (criticidad * 0.5) + (incidenciasActivas * 0.3) + (tiempoInactivo * 0.2);&#10;}&#10;&#10;void Servidor::aplicaDegradacion() {&#10;    estado -= 8 * nivelDegradacion;&#10;    tiempoInactivo += 1;&#10;    if (estado &lt; 0) {&#10;        estado = 0;&#10;    }&#10;}&#10;void Servidor::aplicaMantenimiento() {&#10;    estado += 30;&#10;    tiempoInactivo = 0;&#10;    if (incidenciasActivas &gt; 0) {&#10;        incidenciasActivas--;&#10;    }&#10;    if (estado &gt; 100) {&#10;        estado = 100;&#10;    }&#10;}&#10;&#10;string Servidor::getId() const {&#10;    return id;&#10;}" />
-            </PendingDiffInfo>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/Servidor.h">
-          <value>
-            <PendingDiffInfo>
-              <option name="filePath" value="$PROJECT_DIR$/Servidor.h" />
-              <option name="originalContent" value="#ifndef PROYECTOPROGRAII_SERVIDOR_H&#10;#define PROYECTOPROGRAII_SERVIDOR_H&#10;#include &quot;Equipo.h&quot;&#10;class Servidor : public Equipo {&#10;    float nivelDegradacion;&#10;public:&#10;    Servidor(string, float, int, int, int, float);&#10;    Servidor();&#10;    ~Servidor() override;&#10;    void setNivelDegradacion(float);&#10;    float getNivelDegradacion();&#10;    float calcularPrioridad() override;&#10;    void aplicaDegradacion() override;&#10;    void aplicaMantenimiento() override;&#10;};&#10;&#10;#endif //PROYECTOPROGRAII_SERVIDOR_H" />
-              <option name="updatedContent" value="#ifndef PROYECTOPROGRAII_SERVIDOR_H&#10;#define PROYECTOPROGRAII_SERVIDOR_H&#10;#include &quot;Equipo.h&quot;&#10;class Servidor : public Equipo {&#10;    float nivelDegradacion;&#10;public:&#10;    Servidor(string, float, int, int, int, float);&#10;    Servidor();&#10;    ~Servidor() override;&#10;    void setNivelDegradacion(float);&#10;    float getNivelDegradacion();&#10;    float calcularPrioridad() override;&#10;    void aplicaDegradacion() override;&#10;    void aplicaMantenimiento() override;&#10;    string getId() const override;&#10;};&#10;&#10;#endif //PROYECTOPROGRAII_SERVIDOR_H" />
             </PendingDiffInfo>
           </value>
         </entry>

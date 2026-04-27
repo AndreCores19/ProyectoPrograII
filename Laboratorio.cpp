@@ -66,3 +66,12 @@ void Laboratorio::agregarEquipo(Equipo* nuevo) {
         }
     }
 }
+
+Equipo* Laboratorio::buscarEquipo(string id) {
+    for (int i = 0; i < cantidad; i++) {
+        if (equipos[i] != nullptr && equipos[i]->getId() == id) {
+            return equipos[i];
+        }
+    }
+    return nullptr;
+}
