@@ -1,6 +1,13 @@
 
 #include "Simulacion.h"
 
+void Simulacion::ejecutarDia(int diaActual) {
+    laboratorio->degradarEquipos();
+    planificador->planificarDía(laboratorio->getEquipos(), laboratorio->getCantidad());
+    laboratorio->setDiaActual(diaActual);
+    reporte->genReporteDiario(laboratorio->getEquipos(), laboratorio->getCantidad());
+}
+
 Simulacion::Simulacion(string rutaEquipos, string rutaIncidencias) {
     totalDias = 30;
     laboratorio = new Laboratorio();
@@ -18,6 +25,11 @@ Simulacion::~Simulacion() {
     delete reporte;
 }
 
-void Simulacion::ejecutarSimulacion() {
 
+
+void Simulacion::ejecutarSimulacion() {
+    cout << "Ejecutando simulacion..." << endl;
+    for (int i = 0; i < totalDias; i++) {
+
+    }
 }
