@@ -18,6 +18,8 @@ public:
     float calcularRiesgoActual();
     void agregarEquipo(Equipo*);
     Equipo* buscarEquipo(string id);
+    int getCantidad();
+    Equipo** getEquipos();
 };
 
 

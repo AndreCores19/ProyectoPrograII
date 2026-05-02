@@ -30,4 +30,6 @@ add_executable(ProyectoPrograII main.cpp
         PlanificadorDiario.cpp
         PlanificadorDiario.h
         Incidencia.cpp
+        Simulacion.cpp
+        Simulacion.h
 )

@@ -12,7 +12,8 @@ class GenerarReporte {
 public:
     GenerarReporte(Laboratorio*);
     ~GenerarReporte();
-    void genReporteDiario();
+    string clasificarRiesgo(float riesgo);
+    void genReporteDiario(Equipo**, int);
     void genReporteFinal();
 };
 

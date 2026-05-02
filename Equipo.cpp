@@ -1,12 +1,18 @@
 
 #include "Equipo.h"
 
+#include "OperacionInconsistente.h"
+
 Equipo::Equipo(string id, float estado, int tiempoInactivo, int criticidad, int incidenciasActivas){
     this->id = id;
     this->estado = estado;
     this->tiempoInactivo = tiempoInactivo;
     this->criticidad = criticidad;
     this->incidenciasActivas = incidenciasActivas;
+    incidencias = new Incidencia*[maxIncidencias];
+    for (int i = 0; i < maxIncidencias; i++) {
+        incidencias[i] = nullptr;
+    }
 }
 
 Equipo::Equipo(){
@@ -15,6 +21,10 @@ Equipo::Equipo(){
      tiempoInactivo = 0;
      criticidad = 1;
      incidenciasActivas = 0;
+    incidencias = new Incidencia*[maxIncidencias];
+    for (int i = 0; i < maxIncidencias; i++) {
+        incidencias[i] = nullptr;
+    }
 }
 
 void Equipo::setId(string id) {
@@ -49,4 +59,19 @@ void Equipo::setIncidenciasActiva(int incidenciasActivas) {
 int Equipo::getIncidenciasActiva() {
     return incidenciasActivas;
 }
-Equipo::~Equipo(){}
+Equipo::~Equipo() {
+    for (int i = 0; i < incidenciasActivas; i++) {
+        if (incidencias[i] != nullptr)
+            delete incidencias[i];
+    }
+    delete[] incidencias;
+}
+
+void Equipo::agregarIncidencia(Incidencia* inc) {
+    // Validar que no se supere el máximo
+    if (incidenciasActivas >= maxIncidencias)
+        throw OperacionInconsistente("Equipo " + id + " alcanzó el máximo de incidencias");
+
+    incidencias[incidenciasActivas] = inc;
+    incidenciasActivas++;
+}

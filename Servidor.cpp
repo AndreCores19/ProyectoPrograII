@@ -32,6 +32,7 @@ void Servidor::aplicaMantenimiento() {
     estado += 30;
     tiempoInactivo = 0;
     if (incidenciasActivas > 0) {
+        incidencias[incidenciasActivas - 1]->resolver();
         incidenciasActivas--;
     }
     if (estado > 100) {

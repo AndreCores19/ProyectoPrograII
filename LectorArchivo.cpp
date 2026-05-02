@@ -48,27 +48,34 @@ void LectorArchivo::cargarEquipos(Laboratorio* laboratorio) {
 
 void LectorArchivo::cargarIncidencias(Laboratorio* laboratorio) {
     ifstream archivo(rutaIncidencias);
-    if (!archivo.is_open()) {
+    if (!archivo.is_open())
         throw ArchivoInvalido("No se pudo abrir: " + rutaIncidencias);
-    }
+
     string linea;
-    getline(archivo, linea);
-    //Extrae los tres campos de cada incidencia
+    getline(archivo, linea); // saltar encabezado
+
     while (getline(archivo, linea)) {
         stringstream ss(linea);
         string idEquipo, severidadStr, diaStr;
         getline(ss, idEquipo, ';');
-        getline(ss, severidadStr, ';'); // se lee para saltar el campo
-        getline(ss, diaStr, ';');       // se lee para saltar el campo
+        getline(ss, severidadStr, ';');
+        getline(ss, diaStr, ';');
 
-        if (idEquipo.empty()) {
+        if (idEquipo.empty())
             throw FormatoInvalido("Linea mal hecha: " + linea);
-        }
+
+        int severidad = stoi(severidadStr);
+        int dia = stoi(diaStr);
+
+        if (severidad < 0 || severidad > 2)
+            throw OperacionInconsistente("Severidad invalida: " + severidadStr);
+
         Equipo* equipo = laboratorio->buscarEquipo(idEquipo);
-        if (equipo == nullptr) {
+        if (equipo == nullptr)
             throw OperacionInconsistente("Equipo no encontrado: " + idEquipo);
-        }
-        equipo->setIncidenciasActiva(equipo->getIncidenciasActiva() + 1);
+
+        equipo->agregarIncidencia(new Incidencia(idEquipo, severidad, dia));
     }
+
     archivo.close();
 }

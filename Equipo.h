@@ -2,8 +2,10 @@
 #ifndef PROYECTOPROGRAII_EQUIPO_H
 #define PROYECTOPROGRAII_EQUIPO_H
 #include <iostream>
+#include "Incidencia.h"
 using namespace std;
 
+const int maxIncidencias = 100;
 class Equipo {
 protected:
     string id;
@@ -11,6 +13,7 @@ protected:
     int tiempoInactivo;
     int criticidad;
     int incidenciasActivas;
+    Incidencia **incidencias;
 public:
     Equipo();
     void setId(string);
@@ -29,6 +32,8 @@ public:
     virtual void aplicaDegradacion() = 0;
     virtual void aplicaMantenimiento() = 0;
     virtual string getId() const = 0;
+    void agregarIncidencia(Incidencia *);
+
 };
 
 

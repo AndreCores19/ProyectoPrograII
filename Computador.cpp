@@ -5,7 +5,7 @@ Computador::Computador(string id, float estado, int tiempoInactivo, int criticid
     : Equipo(id, estado, tiempoInactivo, criticidad, incidenciasActivas) {
     this->nivelDegradacion = nivelDegradacion;
 }
-Computador::Computador() : Equipo() {
+Computador::Computador(){
     nivelDegradacion = 0.0;
 }
 Computador::~Computador(){}
@@ -33,6 +33,7 @@ void Computador::aplicaMantenimiento() {
     estado += 20;
     tiempoInactivo = 0;
     if (incidenciasActivas > 0) {
+        incidencias[incidenciasActivas - 1]->resolver();
         incidenciasActivas--;
     }
     if (estado > 100) {
@@ -40,7 +41,7 @@ void Computador::aplicaMantenimiento() {
     }
 }
 
-string Computador::getId() const {
+string Computador::getId() const{
     return id;
 }
 

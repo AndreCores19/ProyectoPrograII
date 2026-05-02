@@ -75,3 +75,11 @@ Equipo* Laboratorio::buscarEquipo(string id) {
     }
     return nullptr;
 }
+
+int Laboratorio::getCantidad() {
+    return cantidad;
+}
+
+Equipo** Laboratorio::getEquipos() {
+    return equipos;
+}

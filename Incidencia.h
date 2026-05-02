@@ -1,6 +1,6 @@
 #ifndef PROYECTOPROGRAII_INCIDENCIA_H
 #define PROYECTOPROGRAII_INCIDENCIA_H
-#include "Equipo.h"
+using namespace std;
 //Severidad declarada
 const int Baja = 0;
 const int Media = 1;

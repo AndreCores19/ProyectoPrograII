@@ -16,6 +16,7 @@ public:
     void aplicaDegradacion() override;
     void aplicaMantenimiento() override;
     string getId() const override;
+
 };
 
 
