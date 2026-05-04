@@ -17,9 +17,12 @@ class LectorArchivo {
     string rutaIncidencias;
 public:
     LectorArchivo(string rutaEquipos, string rutaIncidencias);
+    LectorArchivo();
     ~LectorArchivo() = default;
     void cargarEquipos(Laboratorio* laboratorio);
     void cargarIncidencias(Laboratorio* laboratorio);
+    void setRutaEquipos(string rutaEquipos);
+    void setRutaIncidencias(string rutaIncidencias);
 };
 
 

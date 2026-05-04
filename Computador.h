@@ -12,11 +12,11 @@ public:
     ~Computador() override;
     void setNivelDegradacion(float);
     float getNivelDegradacion();
+    float calcularDesgaste() override;
+    float calcularRecuperacion() override;
     float calcularPrioridad() override;
-    void aplicaDegradacion() override;
-    void aplicaMantenimiento() override;
     string getId() const override;
-
+    string toString() override;
 };
 
 

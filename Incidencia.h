@@ -1,5 +1,6 @@
 #ifndef PROYECTOPROGRAII_INCIDENCIA_H
 #define PROYECTOPROGRAII_INCIDENCIA_H
+#include <iostream>
 using namespace std;
 //Severidad declarada
 const int Baja = 0;

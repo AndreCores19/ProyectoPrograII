@@ -12,7 +12,7 @@ class PlanificadorDiario {
     void atenderEquipos(Equipo**, int);
 public:
     PlanificadorDiario(Laboratorio*);
-    void planificarDía(Equipo**, int);
+    void planificarDia(Equipo**, int);
 };
 
 

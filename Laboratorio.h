@@ -2,6 +2,8 @@
 #ifndef PROYECTOPROGRAII_LABORATORIO_H
 #define PROYECTOPROGRAII_LABORATORIO_H
 #include "Equipo.h"
+#include <cstdlib>
+#include <ctime>
 class Laboratorio {
 protected:
     Equipo** equipos;
@@ -20,6 +22,7 @@ public:
     Equipo* buscarEquipo(string id);
     int getCantidad();
     Equipo** getEquipos();
+    void generarIncidenciasAleatorias(int totalIncidencias);
 };
 
 

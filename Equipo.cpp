@@ -26,7 +26,23 @@ Equipo::Equipo(){
         incidencias[i] = nullptr;
     }
 }
+void Equipo::aplicaDegradacion() {
+    estado -= calcularDesgaste();
+    tiempoInactivo++;
+    if (estado < 0)
+        estado = 0;
+}
 
+void Equipo::aplicaMantenimiento() {
+    estado += calcularRecuperacion();
+    tiempoInactivo = 0;
+    if (incidenciasActivas > 0) {
+        incidencias[incidenciasActivas - 1]->resolver();
+        incidenciasActivas--;
+    }
+    if (estado > 100)
+        estado = 100;
+}
 void Equipo::setId(string id) {
     this->id = id;
 }
@@ -74,4 +90,28 @@ void Equipo::agregarIncidencia(Incidencia* inc) {
 
     incidencias[incidenciasActivas] = inc;
     incidenciasActivas++;
+}
+
+string Equipo::toString() {
+    stringstream ss;
+    ss << "ID: " << id
+       << " | Estado: " << estado
+       << " | Criticidad: " << criticidad
+       << " | Cantidad de Incidencias: " << incidenciasActivas << endl;
+    for (int i = 0; i < incidenciasActivas; i++) {
+        if (incidencias[i] != nullptr) {
+            ss << incidencias[i]->getSeveridad() << ", ";
+        }
+    }
+    return ss.str();
+}
+
+string Equipo::toStringIncidencias() {
+    stringstream ss;
+    for (int i = 0; i < incidenciasActivas; i++)
+    {
+        if (incidencias[i] != nullptr)
+            ss << incidencias[i]->getSeveridad() << ", ";
+    }
+    return ss.str();
 }

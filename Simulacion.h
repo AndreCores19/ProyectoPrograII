@@ -17,8 +17,13 @@ class Simulacion {
     void ejecutarDia(int diaActual);
 public:
     Simulacion(string, string);
+    Simulacion();
     ~Simulacion();
     void ejecutarSimulacion();
+    void menu();
+    void subMenuEquipos();
+    void subMenuReportes();
+    void subMenuIncidencias();
 };
 
 

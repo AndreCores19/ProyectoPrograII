@@ -19,7 +19,7 @@ PlanificadorDiario::PlanificadorDiario(Laboratorio* labo) {
     maxEqPorDia = 3;
 }
 
-void PlanificadorDiario::planificarDía(Equipo** equipos, int cantidad) {
+void PlanificadorDiario::planificarDia(Equipo** equipos, int cantidad) {
     ordenamiento.ordenar(equipos, cantidad);
     atenderEquipos(equipos, cantidad);
 }

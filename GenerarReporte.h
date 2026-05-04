@@ -2,19 +2,22 @@
 #ifndef PROYECTOPROGRAII_GENERARREPORTE_H
 #define PROYECTOPROGRAII_GENERARREPORTE_H
 #include "Laboratorio.h"
+#include "Servidor.h"
+#include "Computador.h"
 #include "ArchivoInvalido.h"
 #include <fstream>
 using namespace std;
 
 class GenerarReporte {
-    ofstream reporte;
-    Laboratorio *laboratorio;
+    Laboratorio* laboratorio;
+    string clasificarRiesgo(float riesgo);
 public:
     GenerarReporte(Laboratorio*);
     ~GenerarReporte();
-    string clasificarRiesgo(float riesgo);
-    void genReporteDiario(Equipo**, int);
+    void genReporteDiario();
     void genReporteFinal();
+    void mostrarReporteDia(int dia);
+    void mostrarReporteFinal();
 };
 
 

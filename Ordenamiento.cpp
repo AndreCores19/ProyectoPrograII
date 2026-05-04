@@ -60,3 +60,5 @@ void Ordenamiento::ordenar(Equipo** equipos, int cantidad) {
     if (cantidad <= 1) return;
     mergeSort(equipos, 0, cantidad - 1);
 }
+
+Ordenamiento::Ordenamiento(){}

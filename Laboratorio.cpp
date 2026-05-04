@@ -83,3 +83,22 @@ int Laboratorio::getCantidad() {
 Equipo** Laboratorio::getEquipos() {
     return equipos;
 }
+
+void Laboratorio::generarIncidenciasAleatorias(int totalIncidencias) {
+    srand(time(nullptr));  // semilla aleatoria
+
+    for (int i = 0; i < totalIncidencias; i++) {
+        // Elegir un equipo aleatorio
+        int indice = rand() % cantidad;
+        Equipo* eq = equipos[indice];
+
+        // Generar severidad y dia aleatorios
+        int severidad = rand() % 3;        // 0, 1 o 2
+        int dia = (rand() % 30) + 1;       // 1 al 30
+
+        // Solo agregar si no superó el máximo
+        if (eq->getIncidenciasActiva() < maxIncidencias) {
+            eq->agregarIncidencia(new Incidencia(eq->getId(), severidad, dia));
+        }
+    }
+}
