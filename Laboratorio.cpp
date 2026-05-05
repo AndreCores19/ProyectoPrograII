@@ -1,7 +1,7 @@
 
 #include "Laboratorio.h"
 Laboratorio::Laboratorio() {
-    this->tamano = 100;
+    this->tamano = 150;
     this->cantidad = 0;
     this->diaActual = 0;
     this->equipos = new Equipo*[tamano];

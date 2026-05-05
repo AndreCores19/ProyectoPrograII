@@ -39,6 +39,8 @@ void Simulacion::ejecutarSimulacion() {
     }
     cout << "================== SIMULACION FINALIZADA ==================" << endl;
     reporte->genReporteFinal();
+    reporte->mostrarReporteFinal();
+    cout << endl;
 }
 
 void Simulacion::menu() {
@@ -56,27 +58,32 @@ void Simulacion::menu() {
         switch (opcion) {
         case 1:
             ejecutarSimulacion();
+            cout<< endl;
             break;
         case 0:
-            cout << "Saliendo..." << endl;
+            cout << "Saliendo..." << endl << endl;;
             break;
         case 2:
             cout<< endl;
             cout << "================== Submenu de equipos ==================" << endl;
             subMenuEquipos();
+            cout<< endl;
             break;
         case 3:
             cout<< endl;
             cout << "================== Submenu de incidencias ==================" << endl;
             subMenuIncidencias();
+            cout<< endl;
             break;
         case 4:
             cout<< endl;
             cout << "================== Submenu de reportes ==================" << endl;
             subMenuReportes();
+            cout<< endl;
             break;
         default:
-            cout << "Opcion invalida. Intente de nuevo." << endl;
+            cout << "Opcion invalida. Intente de nuevo." << endl << endl;;
+
         }
     } while (opcion != 0);
 }
@@ -136,9 +143,9 @@ void Simulacion::subMenuEquipos() {
                 cin >> id;
                 Equipo* eq = laboratorio->buscarEquipo(id);
                 if (eq == nullptr)
-                    cout << "Equipo no encontrado." << endl;
+                    cout << "Equipo no encontrado." << endl << endl;
                 else
-                    cout << eq->getEstado() << endl;
+                    cout << eq->getEstado() << endl << endl;
                 break;
         }
         case 4: {
@@ -152,11 +159,11 @@ void Simulacion::subMenuEquipos() {
                     cout << "Equipo encontrado: " << eq->toString() << endl;
                     Servidor* srv = dynamic_cast<Servidor*>(eq);
                     if (srv != nullptr)
-                        cout << "Tipo: Servidor | Degradacion: " << srv->getNivelDegradacion() << endl;
+                        cout << "Tipo: Servidor | Degradacion: " << srv->getNivelDegradacion() << endl << endl;;
 
                     Computador* comp = dynamic_cast<Computador*>(eq);
                     if (comp != nullptr)
-                        cout << "Tipo: Computador | Degradacion: " << comp->getNivelDegradacion() << endl;
+                        cout << "Tipo: Computador | Degradacion: " << comp->getNivelDegradacion() << endl << endl;;
                 }
                 break;
         }
@@ -184,18 +191,21 @@ void Simulacion::subMenuReportes() {
                 cin >> dia;
                 if (dia < 1 || dia > 30)
                     cout << "Dia invalido." << endl;
-                else
+                else{
                     reporte->mostrarReporteDia(dia);
+                    cout<< endl;
+                }
                 break;
                 }
         case 2: {
                 reporte->mostrarReporteFinal();
                 cout << "Saliendo..." << endl;
+                cout<< endl;
                 break;
             }
         case 0:
             {
-                cout << "Volviendo al menu principal..." << endl;
+                cout << "Volviendo al menu principal..." << endl << endl;
                 break;
             }
         default:
@@ -224,7 +234,7 @@ void Simulacion::subMenuIncidencias() {
                     cin >> ruta;
                     lector->setRutaIncidencias(ruta);
                     lector->cargarIncidencias(laboratorio);
-                    cout << "Incidencias cargadas correctamente." << endl;
+                    cout << "Incidencias cargadas correctamente." << endl << endl;
                     break;
                 }
             case 2: {
@@ -232,7 +242,7 @@ void Simulacion::subMenuIncidencias() {
                     cout << "Cuantas incidencias desea generar: ";
                     cin >> total;
                     laboratorio->generarIncidenciasAleatorias(total);
-                    cout << "Incidencias generadas correctamente." << endl;
+                    cout << "Incidencias generadas correctamente." << endl << endl;
                     break;
         }
             case 3: {
@@ -246,12 +256,12 @@ void Simulacion::subMenuIncidencias() {
                     {
                         cout << "Equipo encontrado: " << eq->getId() << endl;
                         cout << "Incidencias activas: ";
-                        cout << eq->toStringIncidencias() << endl;
+                        cout << eq->toStringIncidencias() << endl << endl;
                     }
                     break;
                 }
         default:
-            cout << "Opcion invalida." << endl;
+            cout << "Opcion invalida." << endl << endl;
         }
     } while (opcion != 0);
 }
